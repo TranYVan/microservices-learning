@@ -1,6 +1,10 @@
 server:
   port: 8090
 spring:
+  application:
+    name: "loans"
+  profiles:
+    active: "prod"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -13,23 +17,18 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-      show-sql: true
+    show-sql: true
   config:
-    import:
-      - "application_qa.yaml"
-      - "application_prod.yaml"
-  profiles:
-    active:
-      - "qa"
+    import: "optional:configserver:http://localhost:8071/"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
-build:
-  version: "1.0"
 
-loans:
-  message: "Welcome to NavyT accounts related local APIs "
-  contactDetails:
-    name: "TRAN Y VAN - developer"
-    email: "van@trany.com"
-  onCallSupport:
-    - (555) 555-1234
-    - (555) 523-1345
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
