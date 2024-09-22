@@ -1,0 +1,11 @@
+build:
+  version: "1.2"
+
+loans:
+  message: "Welcome to NavyT accounts related local APIs "
+  contactDetails:
+    name: "TRUONG THANH AN"
+    email: "an.truongthanh@trany.com"
+  onCallSupport:
+    - (555) 104-1949
+    - (555) 461-1241

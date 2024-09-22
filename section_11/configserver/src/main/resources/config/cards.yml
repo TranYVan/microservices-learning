@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+cards:
+  message: "Welcome to NavyT accounts related local APIs"
+  contactDetails:
+    name: "Tran Y Van - Developer"
+    email: "van1@trany.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345
